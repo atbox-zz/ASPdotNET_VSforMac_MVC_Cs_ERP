@@ -14,4 +14,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Views\Title\" />
+    <Folder Include="Repository\Interface\" />
+    <Folder Include="Repository\Repository\" />
+  </ItemGroup>
 </Project>

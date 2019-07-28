@@ -1,0 +1,30 @@
+﻿@model List<ASPdotNET_VSforMac_MVC_Cs_ERP.Models.Title>
+
+<div class="container-fluid">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>職稱名稱</th>
+                <th>建立時間</th>
+                <th>編輯</th>
+                <th>刪除</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Createdate</td>
+                    <td><a asp-action="Edit" asp-route-id="@item.Id"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                    <td><a asp-action="Remove" asp-route-id="@item.Id"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="row">
+        <a asp-action="Add">新增職稱</a>
+    </div>
+</div>

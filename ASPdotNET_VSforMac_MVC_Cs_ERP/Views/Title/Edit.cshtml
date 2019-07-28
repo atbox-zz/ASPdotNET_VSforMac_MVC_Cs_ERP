@@ -1,0 +1,16 @@
+﻿@model ASPdotNET_VSforMac_MVC_Cs_ERP.Models.Title
+
+<div class="container-fluid">
+    <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+        <form method="post" asp-action="Edit">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" class="form-control" />
+            </div>
+            <hr />
+            <p>
+                <button type="submit" class="btn btn-primary">儲存</button>
+            </p>
+        </form>
+    </div>
+</div>

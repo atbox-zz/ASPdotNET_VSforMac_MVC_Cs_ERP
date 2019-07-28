@@ -1,0 +1,19 @@
+﻿@model ASPdotNET_VSforMac_MVC_Cs_ERP.ViewModels.TitleViewModel
+
+<div class="container-fluid">
+    <div class="row" style="margin-top : 10px; margin-bottom: 10px;">
+        <form method="post" asp-action="Add">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" placeholder="職稱名稱" class="form-control" />
+            </div>
+            <div style="color:red;">
+                @ViewBag.Message
+            </div>
+            <hr />
+            <p>
+                <button type="submit" class="btn btn-primary">儲存</button>
+            </p>
+        </form>
+    </div>
+</div>
