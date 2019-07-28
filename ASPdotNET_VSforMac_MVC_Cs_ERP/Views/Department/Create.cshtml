@@ -1,0 +1,21 @@
+﻿@model ASPdotNET_VSforMac_MVC_Cs_ERP.ViewModels.DepartmentViewModel
+
+<div class="container-fluid">
+    <div class="row" style="margin-top : 10px; margin-bottom: 10px;">
+
+        @using (Html.BeginForm("create", "Department", FormMethod.Post, new { defaultbutton = "SaveBtn" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-label">
+                @Html.DisplayNameFor(model => model.Name)
+                <br>
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name, "", new { style = "color:red;" })
+            </div>
+            <hr />
+            <button id="SaveBtn" type="submit" class="btn btn-primary">儲存</button>
+        }
+
+    </div>
+</div>

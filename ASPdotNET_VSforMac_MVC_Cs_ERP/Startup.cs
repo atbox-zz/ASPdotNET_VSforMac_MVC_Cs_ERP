@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using ASPdotNET_VSforMac_MVC_Cs_ERP.Models;
 using ASPdotNET_VSforMac_MVC_Cs_ERP.Repository;
+using ASPdotNET_VSforMac_MVC_Cs_ERP.Repository.Interface;
+using ASPdotNET_VSforMac_MVC_Cs_ERP.Repository.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,6 +34,7 @@ namespace ASPdotNET_VSforMac_MVC_Cs_ERP
             services.AddDbContext<ErpContext>(options => options.UseSqlite(connection));
 
             services.AddScoped<ITitleRepository, TitleRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {

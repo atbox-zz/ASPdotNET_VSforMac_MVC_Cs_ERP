@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ASPdotNET_VSforMac_MVC_Cs_ERP.Models.Department>
+
+<div class="container-fluid">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>部門名稱</th>
+                <th>建立時間</th>
+                <th>編輯</th>
+                <th>刪除</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Createdate</td>
+                    <td>@Html.ActionLink("Edit", "Edit", new { Id = item.Id })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { Id = item.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="row">
+        <a asp-action="Create">新增職稱</a>
+    </div>
+</div>

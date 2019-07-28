@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="$(AspNetCoreAppRuntimeFrameworkVersion)">
+      <IsImplicitlyDefined>true</IsImplicitlyDefined>
+      <PrivateAssets>All</PrivateAssets>
+      <Publish>true</Publish>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1">
@@ -20,5 +24,6 @@
     <Folder Include="Views\Title\" />
     <Folder Include="Repository\Interface\" />
     <Folder Include="Repository\Repository\" />
+    <Folder Include="Views\Department\" />
   </ItemGroup>
 </Project>
