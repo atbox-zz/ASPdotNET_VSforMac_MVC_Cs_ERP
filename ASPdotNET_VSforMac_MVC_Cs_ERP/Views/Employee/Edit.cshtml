@@ -1,0 +1,52 @@
+﻿@{
+    var titles = ViewBag.Titles as IEnumerable<SelectListItem>;
+    var departments = ViewBag.Department as IEnumerable<SelectListItem>;
+}
+
+@model ASPdotNET_VSforMac_MVC_Cs_ERP.ViewModels.EmployeeViewModel
+
+<div class="container-fluid">
+    <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+        <form method="post" asp-action="Edit">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" placeholder="員工姓名" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Name, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Ename"></label>
+                <input asp-for="Ename" type="text" placeholder="員工英文姓名" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Ename, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Address"></label>
+                <input asp-for="Address" type="text" placeholder="員工地址" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Address, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Telphone"></label>
+                <input asp-for="Telphone" type="text" placeholder="員工電話" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Telphone, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary"></label>
+                <input asp-for="Salary" type="text" placeholder="員工薪資" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Salary, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <select asp-for="Title" asp-items="titles" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Department"></label>
+                <select asp-for="Department" asp-items="departments" class="form-control"></select>
+            </div>
+            <hr />
+            <p>
+                <button type="submit" class="btn btn-primary">儲存</button>
+            </p>
+        </form>
+    </div>
+</div>

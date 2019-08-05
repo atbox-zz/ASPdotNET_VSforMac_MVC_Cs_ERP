@@ -33,8 +33,10 @@ namespace ASPdotNET_VSforMac_MVC_Cs_ERP
 
             services.AddDbContext<ErpContext>(options => options.UseSqlite(connection));
 
+            //依賴注入
             services.AddScoped<ITitleRepository, TitleRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
