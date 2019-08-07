@@ -37,6 +37,7 @@ namespace ASPdotNET_VSforMac_MVC_Cs_ERP
             services.AddScoped<ITitleRepository, TitleRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<ICustomRepository, CustomRepository>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {

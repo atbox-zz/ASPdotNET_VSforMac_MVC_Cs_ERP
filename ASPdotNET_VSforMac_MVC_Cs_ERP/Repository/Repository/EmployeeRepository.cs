@@ -10,7 +10,7 @@ namespace ASPdotNET_VSforMac_MVC_Cs_ERP.Repository.Repository
 {
     public class EmployeeRepository : IEmployeeRepository
     {
-        private readonly ErpContext _context;
+        private ErpContext _context;
 
         public EmployeeRepository(ErpContext context)
         {

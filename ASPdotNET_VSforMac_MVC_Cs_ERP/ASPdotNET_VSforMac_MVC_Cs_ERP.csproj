@@ -26,5 +26,6 @@
     <Folder Include="Repository\Repository\" />
     <Folder Include="Views\Department\" />
     <Folder Include="Views\Employee\" />
+    <Folder Include="Views\Custom\" />
   </ItemGroup>
 </Project>
