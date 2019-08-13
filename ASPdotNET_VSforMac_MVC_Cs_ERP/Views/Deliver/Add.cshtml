@@ -1,0 +1,33 @@
+﻿@{
+    var titles = ViewBag.Titles as IEnumerable<SelectListItem>;
+}
+
+@model ASPdotNET_VSforMac_MVC_Cs_ERP.ViewModels.DeliverViewModel
+
+<div class="container-fluid">
+    <div class="row" style="margin-top : 10px; margin-bottom: 10px;">
+        <form method="post" asp-action="Add">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" placeholder="貨運公司名稱" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Name, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact_person"></label>
+                <input asp-for="Contact_person" type="text" placeholder="連絡人" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Contact_person, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Telphone"></label>
+                <input asp-for="Telphone" type="text" placeholder="電話" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Telphone, "", new { style = "color:red;" })
+            </div>
+            <hr />
+            <p>
+                <button type="submit" class="btn btn-primary">儲存</button>
+            </p>
+        </form>
+    </div>
+</div>
