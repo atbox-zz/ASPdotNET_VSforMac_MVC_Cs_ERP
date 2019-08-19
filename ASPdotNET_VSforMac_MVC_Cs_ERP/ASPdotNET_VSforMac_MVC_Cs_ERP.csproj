@@ -29,5 +29,6 @@
     <Folder Include="Views\Custom\" />
     <Folder Include="Views\Supply\" />
     <Folder Include="Views\Deliver\" />
+    <Folder Include="Views\Product_item\" />
   </ItemGroup>
 </Project>
