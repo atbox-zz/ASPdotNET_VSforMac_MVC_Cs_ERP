@@ -1,0 +1,57 @@
+﻿@{
+    var supplys = ViewBag.Supplys as IEnumerable<SelectListItem>;
+    var product_Items = ViewBag.product_Items as IEnumerable<SelectListItem>;
+}
+
+@model ASPdotNET_VSforMac_MVC_Cs_ERP.ViewModels.Product_dataViewModel
+
+<div class="container-fluid">
+    <div class="row" style="margin-top : 10px; margin-bottom: 10px;">
+        <form method="post" asp-action="Add">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" placeholder="產品" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Name, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Supply"></label>
+                <select asp-for="Supply" asp-items="supplys" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product_item"></label>
+                <select asp-for="Product_item" asp-items="product_Items" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit_quality"></label>
+                <input asp-for="Unit_quality" type="text" placeholder="單位數量" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Unit_quality, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" type="text" placeholder="單價" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Price, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Stock_quality"></label>
+                <input asp-for="Stock_quality" type="text" placeholder="庫存量" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Stock_quality, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Order_quality"></label>
+                <input asp-for="Order_quality" type="text" placeholder="已訂購量" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Order_quality, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Safe_quality"></label>
+                <input asp-for="Safe_quality" type="text" placeholder="安全存量" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Safe_quality, "" , new { style = "color:red"})
+            </div>
+            <hr />
+            <p>
+                <button type="submit" class="btn btn-primary">儲存</button>
+            </p>
+        </form>
+    </div>
+</div>
