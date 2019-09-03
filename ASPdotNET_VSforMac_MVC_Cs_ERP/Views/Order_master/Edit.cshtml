@@ -1,0 +1,63 @@
+﻿@{
+    var titles = ViewBag.Titles as IEnumerable<SelectListItem>;
+    var customs = ViewBag.Customs as IEnumerable<SelectListItem>;
+    var delivers = ViewBag.Delivers as IEnumerable<SelectListItem>;
+    var employees = ViewBag.Employees as IEnumerable<SelectListItem>;
+}
+
+@model ASPdotNET_VSforMac_MVC_Cs_ERP.ViewModels.Order_masterViewModel
+
+<div class="container-fluid">
+    <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+        <form method="post" asp-action="Edit">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label asp-for="Custom"></label>
+                <select asp-for="Custom" asp-items="customs" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orderdate"></label>
+                <input asp-for="Orderdate" asp-format="{0:yyyy/MM/dd}" type="text" placeholder="訂單日期" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Orderdate, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Deliverydate"></label>
+                <input asp-for="Deliverydate" asp-format="{0:yyyy/MM/dd}" type="text" placeholder="送貨日期" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Deliverydate, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Deliver"></label>
+                <select asp-for="Deliver" asp-items="delivers" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Charges"></label>
+                <input asp-for="Charges" type="text" placeholder="運費" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Charges, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Receiver"></label>
+                <input asp-for="Receiver" type="text" placeholder="收貨人" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Receiver, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Address"></label>
+                <input asp-for="Address" type="text" placeholder="地址" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Address, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Postcode"></label>
+                <input asp-for="Postcode" type="text" placeholder="郵遞區號" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Postcode, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee"></label>
+                <select asp-for="Employee" asp-items="employees" class="form-control"></select>
+            </div>
+            <hr />
+            <p>
+                <button type="submit" class="btn btn-primary">儲存</button>
+            </p>
+        </form>
+    </div>
+</div>
