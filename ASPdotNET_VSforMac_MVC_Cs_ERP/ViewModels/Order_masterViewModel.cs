@@ -16,7 +16,6 @@ namespace ASPdotNET_VSforMac_MVC_Cs_ERP.ViewModels
         public List<Custom> CustomList { get; set; }
 
         [Required(ErrorMessage = "訂單日期不得為空白")]
-        //[DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [Display(Name = "訂單日期")]
         public DateTime Orderdate { get; set; }
 

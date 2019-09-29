@@ -1,0 +1,37 @@
+﻿@{
+    var product_datas = ViewBag.Product_datas as IEnumerable<SelectListItem>;
+}
+
+@model ASPdotNET_VSforMac_MVC_Cs_ERP.ViewModels.Order_detailViewModel
+
+<div class="container-fluid">
+    <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+        <form method="post" asp-action="Edit">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label asp-for="Order_master"></label>
+                <input asp-for="Order_master" type="text" class="form-control" readonly />
+                @Html.ValidationMessageFor(model => model.Order_master, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Product_data"></label>
+                <select asp-for="Product_data" asp-items="product_datas" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" type="text" placeholder="單價" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Price, "", new { style = "color:red;" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Quality"></label>
+                <input asp-for="Quality" type="text" placeholder="數量" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Quality, "", new { style = "color:red;" })
+            </div>
+            <hr />
+            <p>
+                <button type="submit" class="btn btn-primary">儲存</button>
+            </p>
+        </form>
+    </div>
+</div>

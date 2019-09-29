@@ -42,7 +42,7 @@
                     <td>@item.Postcode</td>
                     <td>@item.Employee.Name</td>
                     <td>@item.Createdate</td>
-                    <td><a asp-controller="" asp-action="Add" asp-route-id="@item.Id"><span>明細</span></a></td>
+                    <td><a asp-controller="Order_detail" asp-action="Index" asp-route-id="@item.Id"><span>明細</span></a></td>
                     <td><a asp-action="Edit" asp-route-id="@item.Id"><span class="glyphicon glyphicon-pencil"></span></a></td>
                     <td><a asp-action="Remove" asp-route-id="@item.Id"><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
@@ -60,7 +60,7 @@
         </ul>
     </nav>
     <div class="row">
-        <a asp-action="Add">新增訂單明細</a>
+        <a asp-action="Add">新增訂單主檔</a>
     </div>
 </div>
 
